@@ -218,70 +218,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Sidebar */}
-      <div className="w-80 bg-gaming-card border-l border-neon-blue/20 p-4">
-        <h2 className="text-lg font-bold text-white mb-4 flex items-center">
-          <Icon name="Users" size={20} className="mr-2 text-neon-green" />
-          Игроки онлайн
-        </h2>
-        
-        <div className="space-y-2">
-          {/* Current User */}
-          <Card className="bg-gaming-dark border-neon-green/30">
-            <CardContent className="p-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-neon-green rounded-full"></div>
-                  <span className="text-white font-medium">{user.name} (вы)</span>
-                </div>
-                {user.isAdmin && (
-                  <Badge className="bg-neon-pink text-white text-xs">
-                    ADMIN
-                  </Badge>
-                )}
-              </div>
-            </CardContent>
-          </Card>
 
-          {/* Other Users */}
-          <Card className="bg-gaming-dark border-gaming-card">
-            <CardContent className="p-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-neon-green rounded-full"></div>
-                  <span className="text-white">PlayerOne</span>
-                </div>
-                <Badge className="bg-neon-pink text-white text-xs">
-                  ADMIN
-                </Badge>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gaming-dark border-gaming-card">
-            <CardContent className="p-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-neon-green rounded-full"></div>
-                <span className="text-white">GamerX</span>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="mt-6">
-          <h3 className="text-sm font-medium text-gray-400 mb-2">Статистика</h3>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between text-gray-300">
-              <span>Всего игроков:</span>
-              <span className="text-neon-green">3</span>
-            </div>
-            <div className="flex justify-between text-gray-300">
-              <span>Админов:</span>
-              <span className="text-neon-pink">2</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
