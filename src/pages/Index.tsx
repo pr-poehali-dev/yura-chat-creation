@@ -74,6 +74,10 @@ const Index = () => {
     }
   };
 
+  const deleteMessage = (messageId: string) => {
+    setMessages(prev => prev.filter(msg => msg.id !== messageId));
+  };
+
   const logout = () => {
     setUser(null);
     localStorage.removeItem('chatUser');
@@ -170,9 +174,22 @@ const Index = () => {
                         </Badge>
                       )}
                     </div>
-                    <span className="text-xs text-gray-500">
-                      {message.timestamp.toLocaleTimeString()}
-                    </span>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-xs text-gray-500">
+                        {message.timestamp.toLocaleTimeString()}
+                      </span>
+                      {user?.isAdmin && (
+                        <Button
+                          onClick={() => deleteMessage(message.id)}
+                          variant="outline"
+                          size="sm"
+                          className="h-6 w-6 p-0 border-red-500/30 text-red-400 hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-200"
+                          title="Удалить сообщение"
+                        >
+                          <Icon name="Trash2" size={12} />
+                        </Button>
+                      )}
+                    </div>
                   </div>
                   <p className="text-gray-300">{message.text}</p>
                 </CardContent>
